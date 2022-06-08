@@ -60,6 +60,8 @@ const props = defineProps<ICartItemProps>()
   }
 
   .product-controls {
+    display: flex;
+    flex-wrap: nowrap;
     margin-left: auto;
 
     &__amount {
@@ -70,7 +72,7 @@ const props = defineProps<ICartItemProps>()
       @include plus-minus-button();
       padding: 1px 8px;
     }
-    &__button:last-child {
+    &__button:nth-child(3) {
       margin-left: 10px;
     }
     &__delete {

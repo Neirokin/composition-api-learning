@@ -1,10 +1,13 @@
 <script setup lang="ts">
-const props = defineProps({ isShowing: { type: Boolean, default: true } })
+const props = defineProps({
+  isShowing: { type: Boolean, default: true },
+  position: { type: String, default: 'right' },
+})
 </script>
 
 <template>
   <transition>
-    <div class="side-card-container" v-if="isShowing">
+    <div class="side-card-container" :class="[`side-card-container--${position}`]" v-if="isShowing">
       <slot />
     </div>
   </transition>
@@ -28,6 +31,12 @@ const props = defineProps({ isShowing: { type: Boolean, default: true } })
 .side-card-container {
   position: fixed;
   top: 0;
-  right: 0;
+
+  &--left {
+    left: 0;
+  }
+  &--right {
+    right: 0;
+  }
 }
 </style>

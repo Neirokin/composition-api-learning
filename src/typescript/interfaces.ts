@@ -1,3 +1,9 @@
+interface IServing {
+  number: number
+  size: number
+  unit: string
+}
+
 export interface IProduct {
   id: number
   image: string
@@ -9,8 +15,8 @@ export interface IProduct {
   title: string
 }
 
-interface IServing {
-  number: number
-  size: number
-  unit: string
+export interface IRestaurant {
+  id: number
+  image: string
+  title: string
 }

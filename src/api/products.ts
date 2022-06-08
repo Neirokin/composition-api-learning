@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { IProduct } from '@/typescript/interfaces'
+import type { IProduct, IRestaurant } from '@/typescript/interfaces'
 
 /**
  * Класс с апихами для работы с блюдом
@@ -78,6 +78,45 @@ class Products {
           size: 2,
           unit: 'oz',
         },
+      },
+    ]
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(fakeData)
+      }, 100)
+    })
+  }
+
+  /**
+   * Получить фейковый список ресторанов (без запроса)
+   * @return {Promise<IProduct>>} - Список блюд
+   */
+  getRestaurantsMock(): Promise<IRestaurant[]> {
+    const fakeData = [
+      {
+        id: 1,
+        title: 'Hooters',
+        image:
+          'https://upload.wikimedia.org/wikipedia/ru/thumb/0/05/Hooters_Logo.svg/1200px-Hooters_Logo.svg.png',
+      },
+      {
+        id: 2,
+        title: 'Hooters',
+        image:
+          'https://upload.wikimedia.org/wikipedia/ru/thumb/0/05/Hooters_Logo.svg/1200px-Hooters_Logo.svg.png',
+      },
+      {
+        id: 3,
+        title: 'Burger King',
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png',
+      },
+      {
+        id: 4,
+        title: 'Burger King',
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png',
       },
     ]
 
